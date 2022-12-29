@@ -122,7 +122,7 @@ with open("ledger.csv", "w") as file:
             previous_block_hash = 0
         # Otherwise, calculate the hash of the previous block
         else:
-            previous_block_hash = hashlib.sha256(str(blocks[i-1]).encode()).hexdigest()
+            previous_block_hash = block_hash
 
         # Calculate the merkle root for the current block
         merkle_root = calculate_merkle_root(block)
